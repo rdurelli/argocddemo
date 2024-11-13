@@ -3,4 +3,4 @@ kind: ConfigMap
 metadata:
   name: spring-boot-color
 data:
-  password: "123456"
+  chave: "123456"
