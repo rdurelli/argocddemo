@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: spring-boot
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: spring-boot
+    server: https://kubernetes.default.svc
+  source:
+    path: k8s
+    repoURL: https://github.com/rdurelli/argocddemo.git
+    targetRevision: HEAD
+    directory:
+      recurse: true
+  sources: []
+  project: spring-boot
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+    automated:
+      prune: true
+      selfHeal: true
