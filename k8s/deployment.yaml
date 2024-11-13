@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
         - name: spring-boot
-          image: durellirsd/argo-springboot:v0
+          image: durellirsd/argo-springboot:v1
           resources:
             limits:
               memory: "128Mi"
